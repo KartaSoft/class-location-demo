@@ -1,0 +1,1 @@
+{"esri_imagery":{"enabled":false,"api_key":null,"style_url":null,"label":null,"note":"No ArcGIS API key at build time: USGS The National Map imagery is the satellite basemap."},"default_basemap":"sat"}

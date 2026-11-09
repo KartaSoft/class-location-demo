@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Class location</title>
+<meta name="description" content="Class locations along a public gas transmission line in North Texas, computed from public data.">
+<link rel="stylesheet" href="vendor/maplibre-gl.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body class="map-page">
+<header class="topbar">
+  <button id="panel-toggle" class="topbar-btn" type="button" aria-controls="panel" aria-expanded="true" title="Show or hide the panel">
+    <span class="burger" aria-hidden="true"></span><span class="sr-only">Panel</span>
+  </button>
+  <a class="brand" href="index.html">KartaSoft</a>
+  <span class="page-title">Class location</span>
+  <nav class="topnav" aria-label="Pages">
+    <a href="index.html" aria-current="page">Map</a>
+    <a href="operators.html">For operators</a>
+    <button id="start" class="start-btn" type="button">Start</button>
+  </nav>
+</header>
+
+<div class="layout">
+  <aside id="panel" aria-label="Map controls">
+    <div id="record" class="record" hidden></div>
+
+    <section class="panel-sec" aria-labelledby="h-year">
+      <h2 id="h-year">Year</h2>
+      <div class="year-row">
+        <button id="play" class="btn" type="button" aria-pressed="false">Play</button>
+        <input id="year" type="range" min="2006" max="2026" step="1" value="2026" aria-label="Year">
+        <output id="year-out" for="year">2026</output>
+      </div>
+      <div id="summary" class="summary" aria-live="polite"></div>
+    </section>
+
+    <section class="panel-sec" id="changes-sec" aria-labelledby="h-changes" hidden>
+      <h2 id="h-changes">Changes in 2026</h2>
+      <div id="changes"></div>
+    </section>
+
+    <section class="panel-sec" aria-labelledby="h-layers">
+      <h2 id="h-layers">Layers</h2>
+      <div id="layer-list"></div>
+    </section>
+
+    <section class="panel-sec" id="watch-sec" aria-labelledby="h-watch" hidden>
+      <h2 id="h-watch">Watch list</h2>
+      <div id="watch"></div>
+    </section>
+
+    <section class="panel-sec" aria-labelledby="h-base">
+      <h2 id="h-base">Basemap</h2>
+      <fieldset class="radios" id="basemap">
+        <legend class="sr-only">Basemap</legend>
+      </fieldset>
+    </section>
+
+    <section class="panel-sec" aria-labelledby="h-places">
+      <h2 id="h-places">Places</h2>
+      <div class="bookmarks" id="bookmarks"></div>
+    </section>
+
+    <section class="panel-sec" aria-labelledby="h-jump">
+      <h2 id="h-jump">Go to milepost</h2>
+      <form id="jump" class="jump" autocomplete="off">
+        <input id="jump-mp" type="number" inputmode="decimal" min="0" max="70.64" step="0.01" placeholder="0 to 70.64" aria-label="Milepost">
+        <button class="btn" type="submit">Go</button>
+      </form>
+    </section>
+  </aside>
+
+  <main id="map-wrap">
+    <div id="map" role="region" aria-label="Map"></div>
+    <div id="loading" class="loading" hidden><span class="spinner" aria-hidden="true"></span><span id="loading-text">Loading</span></div>
+    <div id="tooltip" class="tooltip" hidden></div>
+    <div id="seqcard" class="seqcard" role="dialog" aria-label="Guided sequence" hidden>
+      <p id="seq-text"></p>
+      <div class="seqnav">
+        <span class="step"></span>
+        <button class="btn" type="button" data-seq="back">Back</button>
+        <button class="btn primary" type="button" data-seq="next">Next</button>
+        <button class="btn" type="button" data-seq="close">Close</button>
+      </div>
+    </div>
+    <noscript><p class="noscript">The map needs JavaScript.</p></noscript>
+  </main>
+</div>
+
+<footer class="site-footer" id="footer">
+  <p>KartaSoft. Demonstration on public data, not a compliance determination for any operator. Pipe attributes are synthetic.</p>
+</footer>
+
+<script src="vendor/maplibre-gl.js"></script>
+<script src="js/common.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

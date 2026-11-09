@@ -1,0 +1,128 @@
+{
+ "title": "Class location demonstration on a public gas transmission line",
+ "line": "a 36-inch intrastate gas transmission line in Denton and Collin counties, from the Texas RRC public pipeline dataset",
+ "reach_note": "The reported reach runs 70.64 miles from the Tarrant/Denton county line to the last Collin/Grayson crossing and includes 6.69 miles along the Grayson County side of the Collin/Grayson county line.",
+ "disclaimer": "This site demonstrates a class location method on public data. It is not a compliance determination for any operator. Class locations are computed from public building, parcel and pipeline data whose positions and dates carry errors. The pipe attributes behind the 192.609 study years, the 192.611 options and their deadlines are synthetic: the real attributes of the line are not public.",
+ "footer": "KartaSoft. Demonstration on public data, not a compliance determination for any operator. Pipe attributes are synthetic.",
+ "run_timestamp_utc": "2026-11-09T02:00:41+00:00",
+ "analysis_year": 2026,
+ "engine": "classloc 0.1.0",
+ "command": "classloc site --config configs/denton_collin.yaml --year 2026",
+ "regulatory_basis": "49 CFR 192.5, 192.609, 192.611 (eCFR as of 2026-11-04)",
+ "boundary_method": "perpendicular",
+ "satellite_basemap": "usgs",
+ "vintages": {
+  "rrc_tpms": "RRC TPMS public REST layer, features modified 2026-08-24, retrieved 2026-11-07",
+  "tiger": "US Census cartographic boundary file cb_2024_us_county_500k",
+  "usa_structures": "FEMA and ORNL USA Structures, imagery 2009 to 2023, production to 2024-08-16, retrieved 2026-11-07",
+  "overture": "Overture Maps buildings release 2026-10-21.0, retrieved 2026-11-07",
+  "parcel_synthetic": "squares for improved parcels without a footprint (C22), parcel data as below",
+  "denton_cad": "Denton CAD Parcels_Appraisal on appraisal year 2027, retrieved 2026-11-07",
+  "collin_cad": "Collin CAD parcels_with_appraisal_data_R5, certified 2026 and preliminary 2027, retrieved 2026-11-07",
+  "grayson_cad": "Grayson CAD appraisal export of 2026-10-14 (2026 supplement 12) and GraysonCAD_Cloud parcels, retrieved 2026-11-07",
+  "tarrant_cfw": "City of Fort Worth Parcels_Public_View of TAD data, tax year 2026, retrieved 2026-11-07",
+  "permits": "Denton County DEV_Permits to 2023-06-09 and City of Denton yearly permit reports 2022 to 2026, retrieved 2026-11-07"
+ },
+ "counts": {
+  "reach_length_mi": 70.644,
+  "class_miles": {
+   "class_1": 37.8596,
+   "class_2": 18.0359,
+   "class_3": 14.7483
+  },
+  "counted_structures_in_reach": 1408,
+  "counted_units_in_reach": 1418,
+  "changes_2006_2026": 54,
+  "near_threshold_stretches": 36,
+  "assembly_candidates_within_300_ft": 3,
+  "centerline_conflicts_in_reach": 6,
+  "predicted_lots": 1478,
+  "expected_buildings": {
+   "1": 363.8,
+   "2": 616.19,
+   "3": 792.67,
+   "5": 1032.83
+  },
+  "miles_p_increase_above_0_5": {
+   "1": 4.31,
+   "2": 7.258,
+   "3": 7.284,
+   "5": 7.901
+  },
+  "centerline_sensitive_mi": 11.633,
+  "counting_sensitive_mi": 2.953,
+  "consequence_synthetic_pipe_miles_by_outcome": {
+   "synthetic": true,
+   "none": 47.2756,
+   "confirm": 12.3217,
+   "reduce": 11.0465,
+   "needing_action": 23.3682,
+   "total": 70.6438
+  }
+ },
+ "build_out": {
+  "calibration_lots": 5915,
+  "share_built_within_years": {
+   "1": 0.3032,
+   "2": 0.4956,
+   "3": 0.6091,
+   "5": 0.7503
+  },
+  "median_years_to_build": 3
+ },
+ "sources": [
+  {
+   "data": "Pipeline centerline",
+   "text": "Railroad Commission of Texas, Texas Pipeline Mapping System, public data retrieved 2026-11-07. The RRC states that these data are not an authoritative record. Positional accuracy reported by the operator: 51 to 300 ft."
+  },
+  {
+   "data": "County boundaries",
+   "text": "US Census Bureau, 2024 cartographic boundary files."
+  },
+  {
+   "data": "Building footprints",
+   "text": "USA Structures, Oak Ridge National Laboratory and FEMA."
+  },
+  {
+   "data": "Additional building footprints",
+   "text": "Overture Maps Foundation (release 2026-10-21.0), overturemaps.org, including data from (c) OpenStreetMap contributors, available under the Open Database License, Microsoft ML Buildings (ODbL) and Esri Community Maps contributors (CC BY 4.0)."
+  },
+  {
+   "data": "Parcels and year built",
+   "text": "Denton Central Appraisal District, Collin Central Appraisal District, Grayson Central Appraisal District, and Tarrant Appraisal District data through the City of Fort Worth parcel view."
+  },
+  {
+   "data": "Permits",
+   "text": "Denton County and City of Denton public permit records."
+  }
+ ],
+ "license_notice": "The structure layers (structures, secondary_buildings, assembly_candidates and centerline_conflicts) contain building footprints derived from Overture Maps data that include OpenStreetMap and Microsoft ML Buildings data under the Open Database License 1.0 (https://opendatacommons.org/licenses/odbl/1-0/). As derivative databases, these layers are made available under the ODbL 1.0. (c) OpenStreetMap contributors.",
+ "files": {
+  "centerline.json": 545462,
+  "centerline.geojson": 13943,
+  "corridor.geojson": 68381,
+  "analysis_corridor.geojson": 71729,
+  "window_counts.json": 530606,
+  "class_by_year.json": 10418,
+  "counts_by_year.json": 493,
+  "segments_2026.geojson": 64433,
+  "change_markers.geojson": 49427,
+  "near_threshold.geojson": 39577,
+  "structures.geojson": 2643945,
+  "secondary_buildings.geojson": 389310,
+  "assembly_candidates.geojson": 18687,
+  "centerline_conflicts.geojson": 3841,
+  "parcels.geojson": 3221271,
+  "plats.geojson": 220434,
+  "permits.geojson": 262164,
+  "predicted_lots.geojson": 868081,
+  "predicted_segments_h1.geojson": 50901,
+  "predicted_segments_h2.geojson": 44780,
+  "predicted_segments_h3.geojson": 39907,
+  "predicted_segments_h5.geojson": 38248,
+  "class_sensitivity.geojson": 54432,
+  "consequence_synthetic.geojson": 84836,
+  "consequence_synthetic.json": 41315,
+  "site_config.json": 202
+ }
+}
